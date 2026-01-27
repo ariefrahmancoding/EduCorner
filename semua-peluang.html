@@ -3,216 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduCorner - Ulurkan Tangan, Wujudkan Masa Depan</title>
+    <title>Semua Peluang - EduCorner</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
-    </style>
+    <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="relative">
-                    <i class="fas fa-cog fa-2x text-blue-900"></i>
-                    <i class="fas fa-graduation-cap absolute top-1 left-1 text-xs text-white"></i>
-                    <i class="fas fa-star absolute -top-1 -right-1 text-yellow-400 text-xs animate-pulse"></i>
-                </div>
-                <span class="text-2xl font-bold text-blue-900 tracking-tight">EduCorner</span>
-            </div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#" class="hover:text-blue-600 transition">Beranda</a>
-                <a href="#" class="hover:text-blue-600 transition">Peluang</a>
-                <a href="#" class="hover:text-blue-600 transition">Kategori</a>
-                <button class="bg-blue-900 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition">Daftar Sekarang</button>
-            </div>
+    <nav class="bg-white shadow-sm p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-blue-900 font-bold flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> Kembali ke Beranda
+            </a>
+            <span class="text-xl font-bold text-blue-900">EduCorner Katalog</span>
         </div>
     </nav>
 
-    <header class="hero-gradient h-[600px] flex items-center text-white text-center px-4">
-        <div class="container mx-auto">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Ulurkan Tangan, Wujudkan Masa Depan</h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 font-light text-blue-100">
-                Wadah informasi beasiswa, magang, dan pelatihan terkurasi untuk meningkatkan skill mahasiswa dan lulusan baru Indonesia.
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#pencarian" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition transform hover:scale-105">Cari Peluang</a>
-                <a href="#" class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition">Pelajari Lebih Lanjut</a>
-            </div>
-        </div>
-    </header>
+    <section class="container mx-auto px-6 py-12">
+        <h1 class="text-3xl font-bold mb-4">Semua Peluang Terkini</h1>
+        <p class="text-gray-600 mb-10">Jelajahi seluruh informasi beasiswa, magang, dan pelatihan yang tersedia.</p>
 
-    <section id="pencarian" class="container mx-auto px-6 -mt-16 relative z-10">
-        <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                    <label class="block text-sm font-semibold mb-2">Jenjang Pendidikan</label>
-                    <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                        <option>Semua Jenjang</option>
-                        <option>SMA / SMK</option>
-                        <option>Diploma (D3)</option>
-                        <option>Sarjana (S1)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold mb-2">Lokasi</label>
-                    <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                        <option>Semua Lokasi</option>
-                        <option>Dalam Negeri</option>
-                        <option>Luar Negeri</option>
-                    </select>
-                </div>
-                <div class="flex items-end">
-                    <button class="w-full bg-blue-900 text-white p-3 rounded-lg font-bold hover:bg-blue-800 transition">Cari Sekarang</button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Beasiswa</span>
+                <h3 class="text-xl font-bold mt-4 mb-2">Beasiswa Unggulan 2026</h3>
+                <p class="text-sm text-gray-500 mb-4">Kemdikbudristek RI</p>
+                <div class="flex justify-between items-center border-t pt-4">
+                    <span class="text-red-500 text-sm font-medium">Deadline: 15 Maret</span>
+                    <a href="#" target="_blank" class="text-blue-900 font-bold">Detail</a>
                 </div>
             </div>
-        </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <span class="bg-green-100 text-green-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Magang</span>
+                <h3 class="text-xl font-bold mt-4 mb-2">Magang Bakti BCA</h3>
+                <p class="text-sm text-gray-500 mb-4">PT Bank Central Asia</p>
+                <div class="flex justify-between items-center border-t pt-4">
+                    <span class="text-red-500 text-sm font-medium">Deadline: 30 April</span>
+                    <a href="#" target="_blank" class="text-blue-900 font-bold">Detail</a>
+                </div>
+            </div>
+
+            </div>
     </section>
-
-    <section class="container mx-auto px-6 py-20">
-        <h2 class="text-3xl font-bold text-center mb-12">Empat Pilar Peluang</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition group">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
-                    <i class="fas fa-graduation-cap text-2xl text-blue-900 group-hover:text-white"></i>
-                </div>
-                <h3 class="font-bold mb-2">Beasiswa</h3>
-                <p class="text-sm text-gray-500">Nasional & Internasional</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition group">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
-                    <i class="fas fa-briefcase text-2xl text-blue-900 group-hover:text-white"></i>
-                </div>
-                <h3 class="font-bold mb-2">Magang</h3>
-                <p class="text-sm text-gray-500">Corporate, Startup, BUMN</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition group">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
-                    <i class="fas fa-laptop-code text-2xl text-blue-900 group-hover:text-white"></i>
-                </div>
-                <h3 class="font-bold mb-2">Pelatihan</h3>
-                <p class="text-sm text-gray-500">Hard skill & Soft skill</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition group">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
-                    <i class="fas fa-info-circle text-2xl text-blue-900 group-hover:text-white"></i>
-                </div>
-                <h3 class="font-bold mb-2">Info Pendidikan</h3>
-                <p class="text-sm text-gray-500">Seminar, Webinar, Lomba</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-gray-100 py-20">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold mb-2">Peluang Terbaru</h2>
-                    <p class="text-gray-600">Terus diperbarui untuk masa depanmu.</p>
-                </div>
-                <a href="#" class="text-blue-900 font-semibold hover:underline">Lihat Semua</a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="p-6">
-                        <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Beasiswa</span>
-                        <h3 class="text-xl font-bold mt-4 mb-2">Bright Scholarship 2026</h3>
-                        <p class="text-sm text-gray-500 mb-4 flex items-center">
-                            <i class="fas fa-university mr-2"></i> Yayasan Baitul Ma`al
-                        </p>
-                        <div class="flex justify-between items-center text-sm border-t pt-4">
-                            <span class="text-red-500 font-medium"><i class="far fa-clock mr-1"></i> Deadline: 31 Jan</span>
-                            <a href="#" class="text-blue-900 font-bold">Detail</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="p-6">
-                        <span class="bg-green-100 text-green-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Volunteer</span>
-                        <h3 class="text-xl font-bold mt-4 mb-2">Green Leaders</h3>
-                        <p class="text-sm text-gray-500 mb-4 flex items-center">
-                            <i class="fas fa-building mr-2"></i> Green Democracy Institute
-                        </p>
-                        <div class="flex justify-between items-center text-sm border-t pt-4">
-                            <span class="text-red-500 font-medium"><i class="far fa-clock mr-1"></i> Deadline: 15 Feb 2026</span>
-                            <a href="https://www.greendemocracyinstitute.org/volunteer" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-bold">Detail</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <div class="p-6">
-                        <span class="bg-purple-100 text-purple-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Pelatihan</span>
-                        <h3 class="text-xl font-bold mt-4 mb-2">HP free Online Course</h3>
-                        <p class="text-sm text-gray-500 mb-4 flex items-center">
-                            <i class="fas fa-certificate mr-2"></i>Hp
-                        </p>
-                        <div class="flex justify-between items-center text-sm border-t pt-4">
-                            <span class="text-red-500 font-medium"><i class="far fa-clock mr-1"></i> Deadline: Not Mention</span>
-                            <a href="https://www.life-global.org/allcourses" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-bold">Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-16">Kisah Sukses</h2>
-        <div class="max-w-4xl mx-auto bg-blue-900 rounded-3xl p-10 text-white relative">
-            <i class="fas fa-quote-left text-5xl text-blue-700 absolute top-6 left-6 opacity-50"></i>
-            <div class="relative z-10 text-center">
-                <p class="text-xl italic mb-8">"Berkat informasi terkurasi dari EduCorner, saya berhasil mendapatkan beasiswa S1 ke Jepang tanpa kendala administrasi. Informasinya sangat akurat!"</p>
-                <h4 class="font-bold text-lg">Andi Pratama Almahdi</h4>
-                <p class="text-blue-300 text-sm">Penerima Beasiswa BS 2025</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-blue-50 py-16">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-4">Dapatkan InFo Mingguan</h2>
-            <p class="text-gray-600 mb-8">Jangan ketinggalan peluang emas. Kami kirimkan langsung ke emailmu.</p>
-            <form class="max-w-md mx-auto flex gap-2">
-                <input type="email" placeholder="Email Anda" class="flex-1 p-3 rounded-lg border focus:ring-2 focus:ring-blue-900 outline-none">
-                <button class="bg-blue-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-800 transition">Langganan</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="bg-white border-t py-12">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="col-span-1 md:col-span-2">
-                <div class="flex items-center space-x-2 mb-4">
-                    <i class="fas fa-cog text-blue-900"></i>
-                    <span class="text-xl font-bold text-blue-900">EduCorner</span>
-                </div>
-                <p class="text-gray-500 max-w-sm">Membantu generasi muda Indonesia meraih impian melalui akses informasi pendidikan yang setara dan berkualitas.</p>
-            </div>
-            <div>
-                <h5 class="font-bold mb-4">Tautan Cepat</h5>
-                <ul class="text-gray-500 space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-blue-900 transition">Tentang Kami</a></li>
-                    <li><a href="#" class="hover:text-blue-900 transition">Kontak</a></li>
-                    <li><a href="#" class="hover:text-blue-900 transition">Kebijakan Privasi</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold mb-4">Ikuti Kami</h5>
-                <div class="flex space-x-4 text-xl text-blue-900">
-                    <a href="#" class="hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="hover:scale-110 transition"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto px-6 mt-12 pt-8 border-t text-center text-gray-400 text-sm">
-            &copy; 2026 EduCorner. Hak Cipta Dilindungi.
-        </div>
-    </footer>
 
 </body>
 </html>
