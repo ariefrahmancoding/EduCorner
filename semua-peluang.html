@@ -126,6 +126,27 @@
 
             </div>
     </main>
+<script>
+    // Fungsi untuk menyortir kartu berdasarkan link yang diklik
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const filterPilihan = urlParams.get('filter'); // mengambil kata 'beasiswa', 'magang', dll
+        const semuaKartu = document.querySelectorAll('.card-item');
 
+        if (filterPilihan) {
+            semuaKartu.forEach(kartu => {
+                const kategoriKartu = kartu.getAttribute('data-category');
+                if (kategoriKartu === filterPilihan) {
+                    kartu.style.display = 'block'; // Tampilkan jika cocok
+                } else {
+                    kartu.style.display = 'none'; // Sembunyikan jika beda
+                }
+            });
+            
+            // Ubah judul halaman agar sesuai kategori
+            document.querySelector('h1').innerText = "Kategori: " + filterPilihan.toUpperCase();
+        }
+    }
+</script>
 </body>
 </html>
