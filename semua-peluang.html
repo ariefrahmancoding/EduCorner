@@ -19,19 +19,22 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        /* Memastikan font Inter dipaksa masuk ke seluruh elemen input & select tanpa celah */
+        input, select, option, button {
+            font-family: 'Inter', sans-serif !important;
+        }
     </style>
 </head>
 <body class="bg-[#f8fafc] text-slate-800 antialiased font-sans">
 
     <nav class="bg-white/90 backdrop-blur-md shadow-sm p-4 sticky top-0 z-50 border-b border-slate-100 transition-all">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <a href="index.html" class="flex items-center text-sm font-semibold text-blue-900 hover:text-blue-700 transition gap-2 group">
+            <a href="index.html" class="flex items-center text-sm font-semibold text-blue-900 hover:text-blue-700 transition gap-2 group font-sans">
                 <i class="fas fa-arrow-left transition-transform group-hover:-translate-x-1"></i> Kembali ke Beranda
             </a>
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-900 font-bold text-sm">EC</div>
-                <h2 class="font-bold text-slate-900 tracking-tight text-sm hidden sm:block">EduCorner Katalog</h2>
+                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-900 font-bold text-sm font-sans">EC</div>
+                <h2 class="font-bold text-slate-900 tracking-tight text-sm hidden sm:block font-sans">EduCorner Katalog</h2>
             </div>
         </div>
     </nav>
@@ -39,9 +42,9 @@
     <header class="bg-gradient-to-r from-blue-950 to-blue-900 text-white py-16 px-6 relative overflow-hidden mb-12">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div class="container mx-auto text-center relative z-10">
-            <span class="text-xs font-semibold uppercase tracking-widest text-blue-300 bg-blue-950/50 px-3 py-1.5 rounded-full border border-blue-800/30">Pusat Informasi</span>
-            <h1 class="text-3xl md:text-4xl font-bold mt-4 mb-3 tracking-tight">Semua Peluang & Informasi</h1>
-            <p class="text-blue-200/90 font-light text-sm md:text-base max-w-md mx-auto leading-relaxed">Temukan ribuan akses beasiswa, magang, dan pelatihan terkurasi untuk masa depan gemilangmu.</p>
+            <span class="text-xs font-semibold uppercase tracking-widest text-blue-300 bg-blue-950/50 px-3 py-1.5 rounded-full border border-blue-800/30 font-sans">Pusat Informasi</span>
+            <h1 class="text-3xl md:text-4xl font-bold mt-4 mb-3 tracking-tight font-sans">Semua Peluang & Informasi</h1>
+            <p class="text-blue-200/90 font-light text-sm md:text-base max-w-md mx-auto leading-relaxed font-sans">Temukan ribuan akses beasiswa, magang, dan pelatihan terkurasi untuk masa depan gemilangmu.</p>
         </div>
     </header>
 
@@ -49,18 +52,18 @@
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             
             <div class="flex flex-col">
-                <label class="block text-[11px] font-bold uppercase text-slate-400 tracking-wider mb-2">Cari Kata Kunci</label>
+                <label class="block text-[11px] font-bold uppercase text-slate-400 tracking-wider mb-2 font-sans">Cari Kata Kunci</label>
                 <div class="relative flex items-center">
                     <i class="fas fa-search absolute left-3.5 text-slate-400 text-xs pointer-events-none"></i>
-                    <input type="text" id="input-search" oninput="aplikasikanFilter()" placeholder="Ketik nama program..." class="w-full pl-9 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition text-sm text-slate-700 font-medium placeholder-slate-400">
+                    <input type="text" id="input-search" oninput="aplikasikanFilter()" placeholder="Ketik nama program..." class="w-full pl-9 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition text-sm text-slate-700 font-medium placeholder-slate-400 font-sans antialiased">
                 </div>
             </div>
 
             <div class="flex flex-col">
-                <label class="block text-[11px] font-bold uppercase text-slate-400 tracking-wider mb-2">Kategori</label>
+                <label class="block text-[11px] font-bold uppercase text-slate-400 tracking-wider mb-2 font-sans">Kategori</label>
                 <div class="relative flex items-center">
                     <i class="fas fa-tags absolute left-3.5 text-slate-400 text-xs pointer-events-none"></i>
-                    <select id="select-kategori" onchange="aplikasikanFilter()" class="w-full pl-9 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition text-sm text-slate-600 font-medium appearance-none cursor-pointer">
+                    <select id="select-kategori" onchange="aplikasikanFilter()" class="w-full pl-9 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition text-sm text-slate-600 font-medium appearance-none cursor-pointer font-sans antialiased">
                         <option value="semua">Semua Kategori</option>
                         <option value="beasiswa">Beasiswa</option>
                         <option value="magang">Magang</option>
@@ -72,10 +75,10 @@
             </div>
 
             <div class="flex flex-col">
-                <label class="block text-[11px] font-bold uppercase text-slate-400 tracking-wider mb-2">Jenjang Pendidikan</label>
+                <label class="block text-[11px] font-bold uppercase text-slate-400 tracking-wider mb-2 font-sans">Jenjang Pendidikan</label>
                 <div class="relative flex items-center">
                     <i class="fas fa-graduation-cap absolute left-3.5 text-slate-400 text-xs pointer-events-none"></i>
-                    <select id="select-jenjang" onchange="aplikasikanFilter()" class="w-full pl-9 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition text-sm text-slate-600 font-medium appearance-none cursor-pointer">
+                    <select id="select-jenjang" onchange="aplikasikanFilter()" class="w-full pl-9 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition text-sm text-slate-600 font-medium appearance-none cursor-pointer font-sans antialiased">
                         <option value="semua">Semua Jenjang</option>
                         <option value="sma_smk">SMA / SMK</option>
                         <option value="d3">Diploma (D3)</option>
@@ -86,10 +89,10 @@
             </div>
 
             <div class="flex flex-col">
-                <label class="block text-[11px] font-bold uppercase text-slate-400 tracking-wider mb-2">Lokasi</label>
+                <label class="block text-[11px] font-bold uppercase text-slate-400 tracking-wider mb-2 font-sans">Lokasi</label>
                 <div class="relative flex items-center">
                     <i class="fas fa-map-marker-alt absolute left-3.5 text-slate-400 text-xs pointer-events-none"></i>
-                    <select id="select-lokasi" onchange="aplikasikanFilter()" class="w-full pl-9 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition text-sm text-slate-600 font-medium appearance-none cursor-pointer">
+                    <select id="select-lokasi" onchange="aplikasikanFilter()" class="w-full pl-9 pr-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 transition text-sm text-slate-600 font-medium appearance-none cursor-pointer font-sans antialiased">
                         <option value="semua">Semua Lokasi</option>
                         <option value="dalam_negeri">Dalam Negeri</option>
                         <option value="luar_negeri">Luar Negeri</option>
@@ -100,8 +103,8 @@
 
         </div>
         <div class="flex justify-between items-center px-2 mt-4 text-xs font-medium">
-            <p id="counter-info" class="text-slate-500 bg-slate-200/50 px-2.5 py-1 rounded-md">Menampilkan 0 peluang</p>
-            <button onclick="resetSemuaFilter()" class="text-red-500 hover:text-red-700 transition flex items-center gap-1.5"><i class="fas fa-sync-alt text-[10px]"></i> Reset Semua Filter</button>
+            <p id="counter-info" class="text-slate-500 bg-slate-200/50 px-2.5 py-1 rounded-md font-sans">Menampilkan 0 peluang</p>
+            <button onclick="resetSemuaFilter()" class="text-red-500 hover:text-red-700 transition flex items-center gap-1.5 font-sans"><i class="fas fa-sync-alt text-[10px]"></i> Reset Semua Filter</button>
         </div>
     </section>
 
@@ -113,8 +116,8 @@
             <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <i class="fas fa-search-minus text-2xl"></i>
             </div>
-            <h3 class="text-base font-semibold text-slate-700">Peluang tidak ditemukan</h3>
-            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Cobalah menggunakan kombinasi opsi filter lain atau gunakan kata kunci pencarian yang berbeda.</p>
+            <h3 class="text-base font-semibold text-slate-700 font-sans">Peluang tidak ditemukan</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed font-sans">Cobalah menggunakan kombinasi opsi filter lain atau gunakan kata kunci pencarian yang berbeda.</p>
         </div>
     </main>
 
@@ -318,16 +321,16 @@
                 const card = `
                     <div class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(30,58,138,0.08)] hover:-translate-y-1 transition-all duration-300 border border-slate-200/60 flex flex-col justify-between h-full group">
                         <div class="p-6">
-                            <span class="${item.badgeBg} text-[10px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider">${item.badgeText}</span>
-                            <h3 class="text-[17px] font-semibold text-slate-800 mt-4 mb-2.5 leading-snug group-hover:text-blue-900 transition-colors">${item.title}</h3>
-                            <p class="text-xs text-slate-500 flex items-center leading-relaxed">
+                            <span class="${item.badgeBg} text-[10px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider font-sans">${item.badgeText}</span>
+                            <h3 class="text-[17px] font-semibold text-slate-800 mt-4 mb-2.5 leading-snug group-hover:text-blue-900 transition-colors font-sans">${item.title}</h3>
+                            <p class="text-xs text-slate-500 flex items-center leading-relaxed font-sans">
                                 <i class="fas fa-university mr-2 text-slate-400"></i> ${item.provider}
                             </p>
                         </div>
                         <div class="px-6 pb-6">
                             <div class="flex justify-between items-center text-xs border-t border-slate-100 pt-4 mt-2">
-                                <span class="text-rose-600 font-medium bg-rose-50 px-2 py-1 rounded-md flex items-center gap-1.5"><i class="far fa-clock"></i> ${item.deadline}</span>
-                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-semibold hover:text-blue-700 transition flex items-center gap-1">Detail <i class="fas fa-external-link-alt text-[10px]"></i></a>
+                                <span class="text-rose-600 font-medium bg-rose-50 px-2 py-1 rounded-md flex items-center gap-1.5 font-sans"><i class="far fa-clock"></i> ${item.deadline}</span>
+                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-semibold hover:text-blue-700 transition flex items-center gap-1 font-sans">Detail <i class="fas fa-external-link-alt text-[10px]"></i></a>
                             </div>
                         </div>
                     </div>
