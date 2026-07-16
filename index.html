@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduCorner - Ulurkan Tangan, Wujudkan Masa Depan</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
+        .hero-gradient { background: linear-gradient(rgba(30, 58, 138, 0.82), rgba(30, 58, 138, 0.82)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <div class="relative">
@@ -22,34 +33,34 @@
                     <i class="fas fa-graduation-cap absolute top-1 left-1 text-xs text-white"></i>
                     <i class="fas fa-star absolute -top-1 -right-1 text-yellow-400 text-xs animate-pulse"></i>
                 </div>
-                <span class="text-2xl font-bold text-blue-900 tracking-tight">EduCorner</span>
+                <span class="text-xl font-bold text-blue-900 tracking-tight">EduCorner</span>
             </div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="index.html" class="text-blue-600 transition font-semibold">Beranda</a>
-                <a href="semua-peluang.html" class="hover:text-blue-600 transition">Peluang</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="text-blue-600 transition">Beranda</a>
+                <a href="semua-peluang.html" class="text-gray-600 hover:text-blue-600 transition">Peluang</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient h-[600px] flex items-center text-white text-center px-4">
+    <header class="hero-gradient h-[580px] flex items-center text-white text-center px-4">
         <div class="container mx-auto">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Ulurkan Tangan, Wujudkan Masa Depan</h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 font-light text-blue-100">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 leading-tight">Ulurkan Tangan, Wujudkan Masa Depan</h1>
+            <p class="text-base md:text-lg max-w-2xl mx-auto mb-8 font-normal text-blue-100 leading-relaxed">
                 Wadah informasi beasiswa, magang, dan pelatihan terkurasi untuk meningkatkan skill mahasiswa dan lulusan baru Indonesia.
             </p>
-            <div class="flex justify-center gap-4">
-                <a href="#pencarian" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition transform hover:scale-105">Cari Peluang</a>
-                <a href="semua-peluang.html" class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition">Pelajari Lebih Lanjut</a>
+            <div class="flex justify-center gap-4 text-sm font-semibold">
+                <a href="#pencarian" class="bg-white text-blue-900 px-8 py-3.5 rounded-lg hover:bg-blue-50 transition transform hover:-translate-y-0.5">Cari Peluang</a>
+                <a href="semua-peluang.html" class="border-2 border-white px-8 py-3.5 rounded-lg hover:bg-white hover:text-blue-900 transition">Pelajari Lebih Lanjut</a>
             </div>
         </div>
     </header>
 
     <section id="pencarian" class="container mx-auto px-6 -mt-16 relative z-10">
-        <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                 <div>
-                    <label class="block text-sm font-semibold mb-2">Jenjang Pendidikan</label>
-                    <select id="filter-jenjang" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    <label class="block font-semibold text-gray-700 mb-2">Jenjang Pendidikan</label>
+                    <select id="filter-jenjang" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-600 transition">
                         <option value="semua">Semua Jenjang</option>
                         <option value="sma_smk">SMA / SMK</option>
                         <option value="d3">Diploma (D3)</option>
@@ -57,124 +68,123 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold mb-2">Lokasi</label>
-                    <select id="filter-lokasi" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    <label class="block font-semibold text-gray-700 mb-2">Lokasi</label>
+                    <select id="filter-lokasi" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-600 transition">
                         <option value="semua">Semua Lokasi</option>
                         <option value="dalam_negeri">Dalam Negeri</option>
                         <option value="luar_negeri">Luar Negeri</option>
                     </select>
                 </div>
                 <div class="flex items-end">
-                    <button onclick="cariPeluang()" class="w-full bg-blue-900 text-white p-3 rounded-lg font-bold hover:bg-blue-800 transition">Cari Sekarang</button>
+                    <button onclick="cariPeluang()" class="w-full bg-blue-900 text-white p-3 rounded-lg font-semibold hover:bg-blue-800 transition shadow-sm">Cari Sekarang</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container mx-auto px-6 py-20">
-        <h2 class="text-3xl font-bold text-center mb-12">Empat Pilar Peluang</h2>
+    <section class="container mx-auto px-6 py-24">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-center text-blue-900 mb-12">Empat Pilar Peluang</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <a href="semua-peluang.html?kategori=beasiswa" class="bg-white p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition group block">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
-                    <i class="fas fa-graduation-cap text-2xl text-blue-900 group-hover:text-white"></i>
+                <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
+                    <i class="fas fa-graduation-cap text-xl text-blue-900 group-hover:text-white"></i>
                 </div>
-                <h3 class="font-bold mb-2">Beasiswa</h3>
-                <p class="text-sm text-gray-500">Nasional & Internasional</p>
+                <h3 class="font-semibold text-gray-800 mb-1">Beasiswa</h3>
+                <p class="text-xs text-gray-500">Nasional & Internasional</p>
             </a>
             <a href="semua-peluang.html?kategori=magang" class="bg-white p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition group block">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
-                    <i class="fas fa-briefcase text-2xl text-blue-900 group-hover:text-white"></i>
+                <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
+                    <i class="fas fa-briefcase text-xl text-blue-900 group-hover:text-white"></i>
                 </div>
-                <h3 class="font-bold mb-2">Magang</h3>
-                <p class="text-sm text-gray-500">Corporate, Startup, BUMN</p>
+                <h3 class="font-semibold text-gray-800 mb-1">Magang</h3>
+                <p class="text-xs text-gray-500">Corporate, Startup, BUMN</p>
             </a>
             <a href="semua-peluang.html?kategori=pelatihan" class="bg-white p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition group block">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
-                    <i class="fas fa-laptop-code text-2xl text-blue-900 group-hover:text-white"></i>
+                <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
+                    <i class="fas fa-laptop-code text-xl text-blue-900 group-hover:text-white"></i>
                 </div>
-                <h3 class="font-bold mb-2">Pelatihan</h3>
-                <p class="text-sm text-gray-500">Hard skill & Soft skill</p>
+                <h3 class="font-semibold text-gray-800 mb-1">Pelatihan</h3>
+                <p class="text-xs text-gray-500">Hard skill & Soft skill</p>
             </a>
             <a href="semua-peluang.html?kategori=info_pendidikan" class="bg-white p-8 rounded-2xl border border-gray-100 text-center hover:shadow-lg transition group block">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
-                    <i class="fas fa-info-circle text-2xl text-blue-900 group-hover:text-white"></i>
+                <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 transition">
+                    <i class="fas fa-info-circle text-xl text-blue-900 group-hover:text-white"></i>
                 </div>
-                <h3 class="font-bold mb-2">Info Pendidikan</h3>
-                <p class="text-sm text-gray-500">Seminar, Webinar, Lomba</p>
+                <h3 class="font-semibold text-gray-800 mb-1">Info Pendidikan</h3>
+                <p class="text-xs text-gray-500">Seminar, Webinar, Lomba</p>
             </a>
         </div>
     </section>
 
-    <section class="bg-gray-100 py-20">
+    <section class="bg-gray-100 py-24">
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl font-bold mb-2">Peluang Terbaru</h2>
-                    <p class="text-gray-600">Terus diperbarui untuk masa depanmu.</p>
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-blue-900 mb-2">Peluang Terbaru</h2>
+                    <p class="text-sm text-gray-600">Terus diperbarui untuk masa depanmu.</p>
                 </div>
-                <a href="semua-peluang.html" class="text-blue-900 font-semibold hover:underline">Lihat Semua</a>
+                <a href="semua-peluang.html" class="text-sm text-blue-950 font-semibold hover:underline">Lihat Semua</a>
             </div>
             <div id="container-terbaru" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 </div>
         </div>
     </section>
 
-    <section class="py-20 container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-16">Kisah Sukses</h2>
-        <div class="max-w-4xl mx-auto bg-blue-900 rounded-3xl p-10 text-white relative">
-            <i class="fas fa-quote-left text-5xl text-blue-700 absolute top-6 left-6 opacity-50"></i>
+    <section class="py-24 container mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-center text-blue-900 mb-16">Kisah Sukses</h2>
+        <div class="max-w-3xl mx-auto bg-blue-900 rounded-2xl p-10 text-white relative shadow-md">
+            <i class="fas fa-quote-left text-5xl text-blue-700 absolute top-6 left-6 opacity-40"></i>
             <div class="relative z-10 text-center">
-                <p class="text-xl italic mb-8">"Be Bright in the Darkness, Usahakan doamu, Doakan Usahamu"</p>
-                <h4 class="font-bold text-lg">Andi Siaomay</h4>
-                <p class="text-blue-300 text-sm">Penerima Beasiswa Gonjang GANJING 2025</p>
+                <p class="text-lg italic mb-8 font-light leading-relaxed">"Be Bright in the Darkness, Usahakan doamu, Doakan Usahamu"</p>
+                <h4 class="font-semibold text-base">Andi Siaomay</h4>
+                <p class="text-blue-300 text-xs mt-1">Penerima Beasiswa Gonjang GANJING 2025</p>
             </div>
         </div>
     </section>
 
-    <section class="bg-blue-50 py-16">
+    <section class="bg-blue-50 py-20">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-4">Dapatkan Info Mingguan</h2>
-            <p class="text-gray-600 mb-8">Jangan ketinggalan peluang emas. Kami kirimkan langsung ke emailmu.</p>
-            <form class="max-w-md mx-auto flex gap-2" onsubmit="event.preventDefault(); alert('Terima kasih sudah berlangganan!');">
-                <input type="email" placeholder="Email Anda" required class="flex-1 p-3 rounded-lg border focus:ring-2 focus:ring-blue-900 outline-none">
-                <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-800 transition">Langganan</button>
+            <h2 class="text-2xl font-bold text-blue-900 mb-3">Dapatkan Info Mingguan</h2>
+            <p class="text-sm text-gray-600 mb-8 max-w-md mx-auto leading-relaxed">Jangan ketinggalan peluang emas. Kami kirimkan langsung ke emailmu.</p>
+            <form class="max-w-md mx-auto flex gap-2 text-sm" onsubmit="event.preventDefault(); alert('Terima kasih sudah berlangganan!');">
+                <input type="email" placeholder="Alamat email Anda" required class="flex-1 p-3.5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-900 outline-none transition">
+                <button type="submit" class="bg-blue-900 text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-blue-800 transition">Langganan</button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-white border-t py-12">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer class="bg-white border-t border-gray-100 py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
             <div class="col-span-1 md:col-span-2">
                 <div class="flex items-center space-x-2 mb-4">
                     <i class="fas fa-cog text-blue-900"></i>
-                    <span class="text-xl font-bold text-blue-900">EduCorner</span>
+                    <span class="font-bold text-blue-900 tracking-tight text-lg">EduCorner</span>
                 </div>
-                <p class="text-gray-500 max-w-sm">Membantu generasi muda Indonesia meraih impian melalui akses informasi pendidikan yang setara dan berkualitas.</p>
+                <p class="text-gray-500 max-w-sm leading-relaxed">Membantu generasi muda Indonesia meraih impian melalui akses informasi pendidikan yang setara dan berkualitas.</p>
             </div>
             <div>
-                <h5 class="font-bold mb-4">Tautan Cepat</h5>
-                <ul class="text-gray-500 space-y-2 text-sm">
+                <h5 class="font-semibold text-gray-800 mb-4">Tautan Cepat</h5>
+                <ul class="text-gray-500 space-y-2.5">
                     <li><a href="#" class="hover:text-blue-900 transition">Tentang Kami</a></li>
                     <li><a href="#" class="hover:text-blue-900 transition">Kontak</a></li>
                     <li><a href="#" class="hover:text-blue-900 transition">Kebijakan Privasi</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-4">Ikuti Kami</h5>
-                <div class="flex space-x-4 text-xl text-blue-900">
+                <h5 class="font-semibold text-gray-800 mb-4">Ikuti Kami</h5>
+                <div class="flex space-x-4 text-lg text-blue-900">
                     <a href="#" class="hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
                     <a href="#" class="hover:scale-110 transition"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>
-        <div class="container mx-auto px-6 mt-12 pt-8 border-t text-center text-gray-400 text-sm">
+        <div class="container mx-auto px-6 mt-16 pt-8 border-t border-gray-100 text-center text-gray-400 text-xs">
             &copy; 2026 EduCorner. Hak Cipta Dilindungi.
         </div>
     </footer>
 
     <script>
-        // Centralized Database (Satu sumber data konsisten dengan semua-peluang.html)
         const opportunities = [
             {
                 title: "Beasiswa Unggulan Kemendikbud 2026",
@@ -184,7 +194,7 @@
                 location: "dalam_negeri",
                 deadline: "30 Apr 2026",
                 link: "https://beasiswaunggulan.kemdikbud.go.id/",
-                badgeBg: "bg-emerald-100 text-emerald-900",
+                badgeBg: "bg-emerald-50 text-emerald-700 border border-emerald-100",
                 badgeText: "Beasiswa"
             },
             {
@@ -195,7 +205,7 @@
                 location: "dalam_negeri",
                 deadline: "20 Mei 2026",
                 link: "https://djarumbeasiswaplus.org/",
-                badgeBg: "bg-emerald-100 text-emerald-900",
+                badgeBg: "bg-emerald-50 text-emerald-700 border border-emerald-100",
                 badgeText: "Beasiswa"
             },
             {
@@ -206,7 +216,7 @@
                 location: "dalam_negeri",
                 deadline: "15 Feb 2026",
                 link: "https://www.greendemocracyinstitute.org/volunteer",
-                badgeBg: "bg-blue-100 text-blue-900",
+                badgeBg: "bg-blue-50 text-blue-700 border border-blue-100",
                 badgeText: "Info Pendidikan"
             },
             {
@@ -217,7 +227,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.greendemocracyinstitute.org/volunteer",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -228,7 +238,7 @@
                 location: "dalam_negeri",
                 deadline: "16 Feb",
                 link: "https://drive.google.com/drive/folders/1ps9fMnLRuhSA-QRxY1SJqojybQCuLs-n",
-                badgeBg: "bg-purple-100 text-purple-900",
+                badgeBg: "bg-purple-50 text-purple-700 border border-purple-100",
                 badgeText: "Magang"
             },
             {
@@ -239,7 +249,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.nus.edu.sg/neri/careers/",
-                badgeBg: "bg-blue-100 text-blue-900",
+                badgeBg: "bg-blue-50 text-blue-700 border border-blue-100",
                 badgeText: "Info Pendidikan"
             },
             {
@@ -250,7 +260,7 @@
                 location: "luar_negeri",
                 deadline: "28 Feb",
                 link: "https://docs.google.com/forms/d/e/1FAIpQLSeBBznHZ_G7IvalRAYBwDsoGPqRLMi0mTbXSv06OkAzxD6XTQ/viewform",
-                badgeBg: "bg-blue-100 text-blue-900",
+                badgeBg: "bg-blue-50 text-blue-700 border border-blue-100",
                 badgeText: "Info Pendidikan"
             },
             {
@@ -261,7 +271,7 @@
                 location: "dalam_negeri",
                 deadline: "01 Mar 2027",
                 link: "https://career.astra.co.id/lowongan/lowongan-detail-page/13760/DataIntelligenceInternshipProgram",
-                badgeBg: "bg-purple-100 text-purple-900",
+                badgeBg: "bg-purple-50 text-purple-700 border border-purple-100",
                 badgeText: "Magang"
             },
             {
@@ -272,7 +282,7 @@
                 location: "dalam_negeri",
                 deadline: "11 Feb",
                 link: "https://www.edx.org/school/universityofcambridge",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -283,7 +293,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.edx.org/school/universityofcambridge",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -294,7 +304,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://s.id/InternSS1",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -305,7 +315,7 @@
                 location: "dalam_negeri",
                 deadline: "06 Feb",
                 link: "https://s.id/InternSS1",
-                badgeBg: "bg-purple-100 text-purple-900",
+                badgeBg: "bg-purple-50 text-purple-700 border border-purple-100",
                 badgeText: "Magang"
             },
             {
@@ -316,7 +326,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.skills.google/paths/118",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -327,7 +337,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.theforage.com/",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -338,12 +348,11 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.life-global.org/allcourses",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             }
         ];
 
-        // Tampilkan 3 program paling baru di Beranda secara otomatis
         function renderPeluangTerbaru() {
             const container = document.getElementById('container-terbaru');
             container.innerHTML = '';
@@ -352,18 +361,18 @@
 
             listTerbaru.forEach(item => {
                 const card = `
-                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-200 border border-gray-100 flex flex-col justify-between h-full">
                         <div class="p-6">
-                            <span class="${item.badgeBg} text-xs font-bold px-3 py-1 rounded-full uppercase">${item.badgeText}</span>
-                            <h3 class="text-xl font-bold mt-4 mb-2">${item.title}</h3>
-                            <p class="text-sm text-gray-500 mb-4 flex items-center">
+                            <span class="${item.badgeBg} text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">${item.badgeText}</span>
+                            <h3 class="text-lg font-semibold text-gray-800 mt-4 mb-2 leading-snug">${item.title}</h3>
+                            <p class="text-xs text-gray-500 flex items-center mb-4 leading-relaxed">
                                 <i class="fas fa-university mr-2"></i> ${item.provider}
                             </p>
                         </div>
                         <div class="px-6 pb-6">
-                            <div class="flex justify-between items-center text-sm border-t pt-4">
+                            <div class="flex justify-between items-center text-xs border-t border-gray-50 pt-4">
                                 <span class="text-red-500 font-medium"><i class="far fa-clock mr-1"></i> ${item.deadline}</span>
-                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-bold hover:underline">Detail</a>
+                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-semibold hover:underline">Detail</a>
                             </div>
                         </div>
                     </div>
@@ -372,7 +381,6 @@
             });
         }
 
-        // Jalankan pencarian dari halaman Beranda ke halaman Katalog
         function cariPeluang() {
             const jenjang = document.getElementById('filter-jenjang').value;
             const lokasi = document.getElementById('filter-lokasi').value;
