@@ -5,36 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Lengkap - EduCorner</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-['Inter']">
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
 
-    <nav class="bg-white shadow-md p-5 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center text-blue-900 font-bold hover:text-blue-700 transition">
+    <nav class="bg-white shadow-sm p-5 sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center text-sm">
+            <a href="index.html" class="flex items-center text-blue-900 font-semibold hover:text-blue-700 transition">
                 <i class="fas fa-arrow-left mr-2"></i> Kembali ke Beranda
             </a>
-            <h2 class="text-xl font-bold text-blue-900">EduCorner Katalog</h2>
+            <h2 class="font-bold text-blue-900 tracking-tight text-base">EduCorner Katalog</h2>
         </div>
     </nav>
 
-    <header class="bg-blue-900 text-white py-12 mb-10">
+    <header class="bg-blue-900 text-white py-14 mb-10">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold mb-2">Semua Peluang & Informasi</h1>
-            <p class="text-blue-100">Daftar lengkap beasiswa, magang, dan pelatihan untuk masa depanmu.</p>
+            <h1 class="text-3xl md:text-4xl font-bold mb-2 tracking-tight">Semua Peluang & Informasi</h1>
+            <p class="text-blue-100 font-light text-sm md:text-base max-w-md mx-auto">Daftar lengkap beasiswa, magang, dan pelatihan untuk masa depanmu.</p>
         </div>
     </header>
 
-    <section class="container mx-auto px-6 mb-8">
-        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 grid grid-cols-1 md:grid-cols-4 gap-4">
+    <section class="container mx-auto px-6 mb-8 text-sm">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
-                <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Cari Kata Kunci</label>
-                <input type="text" id="input-search" oninput="aplikasikanFilter()" placeholder="Ketik nama program..." class="w-full p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                <label class="block text-[11px] font-bold uppercase text-gray-400 tracking-wider mb-2">Cari Kata Kunci</label>
+                <input type="text" id="input-search" oninput="aplikasikanFilter()" placeholder="Ketik nama program..." class="w-full p-2.5 border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 transition text-gray-700">
             </div>
             <div>
-                <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Kategori</label>
-                <select id="select-kategori" onchange="aplikasikanFilter()" class="w-full p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                <label class="block text-[11px] font-bold uppercase text-gray-400 tracking-wider mb-2">Kategori</label>
+                <select id="select-kategori" onchange="aplikasikanFilter()" class="w-full p-2.5 border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 transition text-gray-600 bg-white">
                     <option value="semua">Semua Kategori</option>
                     <option value="beasiswa">Beasiswa</option>
                     <option value="magang">Magang</option>
@@ -43,8 +57,8 @@
                 </select>
             </div>
             <div>
-                <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Jenjang Pendidikan</label>
-                <select id="select-jenjang" onchange="aplikasikanFilter()" class="w-full p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                <label class="block text-[11px] font-bold uppercase text-gray-400 tracking-wider mb-2">Jenjang Pendidikan</label>
+                <select id="select-jenjang" onchange="aplikasikanFilter()" class="w-full p-2.5 border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 transition text-gray-600 bg-white">
                     <option value="semua">Semua Jenjang</option>
                     <option value="sma_smk">SMA / SMK</option>
                     <option value="d3">Diploma (D3)</option>
@@ -52,17 +66,17 @@
                 </select>
             </div>
             <div>
-                <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Lokasi</label>
-                <select id="select-lokasi" onchange="aplikasikanFilter()" class="w-full p-2.5 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                <label class="block text-[11px] font-bold uppercase text-gray-400 tracking-wider mb-2">Lokasi</label>
+                <select id="select-lokasi" onchange="aplikasikanFilter()" class="w-full p-2.5 border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 transition text-gray-600 bg-white">
                     <option value="semua">Semua Lokasi</option>
                     <option value="dalam_negeri">Dalam Negeri</option>
                     <option value="luar_negeri">Luar Negeri</option>
                 </select>
             </div>
         </div>
-        <div class="flex justify-between items-center px-2">
-            <p id="counter-info" class="text-sm text-gray-500 font-medium">Menampilkan 0 peluang</p>
-            <button onclick="resetSemuaFilter()" class="text-xs font-bold text-red-500 hover:text-red-700 transition"><i class="fas fa-sync-alt mr-1"></i> Reset Filter</button>
+        <div class="flex justify-between items-center px-2 mt-4">
+            <p id="counter-info" class="text-xs text-gray-500 font-medium">Menampilkan 0 peluang</p>
+            <button onclick="resetSemuaFilter()" class="text-xs font-semibold text-red-500 hover:text-red-700 transition"><i class="fas fa-sync-alt mr-1"></i> Reset Filter</button>
         </div>
     </section>
 
@@ -70,15 +84,14 @@
         <div id="container-katalog" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
         
-        <div id="not-found-state" class="hidden text-center py-12">
+        <div id="not-found-state" class="hidden text-center py-16">
             <i class="fas fa-search text-5xl text-gray-300 mb-4"></i>
-            <h3 class="text-lg font-bold text-gray-600">Peluang tidak ditemukan</h3>
-            <p class="text-gray-400 text-sm mt-1">Cobalah menggunakan kombinasi filter lain atau kata kunci yang berbeda.</p>
+            <h3 class="text-base font-semibold text-gray-600">Peluang tidak ditemukan</h3>
+            <p class="text-gray-400 text-xs mt-1">Cobalah menggunakan kombinasi filter lain atau kata kunci yang berbeda.</p>
         </div>
     </main>
 
     <script>
-        // Database Pusat (Wajib Sinkron dengan index.html)
         const opportunities = [
             {
                 title: "Beasiswa Unggulan Kemendikbud 2026",
@@ -88,7 +101,7 @@
                 location: "dalam_negeri",
                 deadline: "30 Apr 2026",
                 link: "https://beasiswaunggulan.kemdikbud.go.id/",
-                badgeBg: "bg-emerald-100 text-emerald-900",
+                badgeBg: "bg-emerald-50 text-emerald-700 border border-emerald-100",
                 badgeText: "Beasiswa"
             },
             {
@@ -99,7 +112,7 @@
                 location: "dalam_negeri",
                 deadline: "20 Mei 2026",
                 link: "https://djarumbeasiswaplus.org/",
-                badgeBg: "bg-emerald-100 text-emerald-900",
+                badgeBg: "bg-emerald-50 text-emerald-700 border border-emerald-100",
                 badgeText: "Beasiswa"
             },
             {
@@ -110,7 +123,7 @@
                 location: "dalam_negeri",
                 deadline: "15 Feb 2026",
                 link: "https://www.greendemocracyinstitute.org/volunteer",
-                badgeBg: "bg-blue-100 text-blue-900",
+                badgeBg: "bg-blue-50 text-blue-700 border border-blue-100",
                 badgeText: "Info Pendidikan"
             },
             {
@@ -121,7 +134,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.greendemocracyinstitute.org/volunteer",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -132,7 +145,7 @@
                 location: "dalam_negeri",
                 deadline: "16 Feb",
                 link: "https://drive.google.com/drive/folders/1ps9fMnLRuhSA-QRxY1SJqojybQCuLs-n",
-                badgeBg: "bg-purple-100 text-purple-900",
+                badgeBg: "bg-purple-50 text-purple-700 border border-purple-100",
                 badgeText: "Magang"
             },
             {
@@ -143,7 +156,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.nus.edu.sg/neri/careers/",
-                badgeBg: "bg-blue-100 text-blue-900",
+                badgeBg: "bg-blue-50 text-blue-700 border border-blue-100",
                 badgeText: "Info Pendidikan"
             },
             {
@@ -154,7 +167,7 @@
                 location: "luar_negeri",
                 deadline: "28 Feb",
                 link: "https://docs.google.com/forms/d/e/1FAIpQLSeBBznHZ_G7IvalRAYBwDsoGPqRLMi0mTbXSv06OkAzxD6XTQ/viewform",
-                badgeBg: "bg-blue-100 text-blue-900",
+                badgeBg: "bg-blue-50 text-blue-700 border border-blue-100",
                 badgeText: "Info Pendidikan"
             },
             {
@@ -165,7 +178,7 @@
                 location: "dalam_negeri",
                 deadline: "01 Mar 2027",
                 link: "https://career.astra.co.id/lowongan/lowongan-detail-page/13760/DataIntelligenceInternshipProgram",
-                badgeBg: "bg-purple-100 text-purple-900",
+                badgeBg: "bg-purple-50 text-purple-700 border border-purple-100",
                 badgeText: "Magang"
             },
             {
@@ -176,7 +189,7 @@
                 location: "dalam_negeri",
                 deadline: "11 Feb",
                 link: "https://www.edx.org/school/universityofcambridge",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -187,7 +200,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.edx.org/school/universityofcambridge",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -198,7 +211,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://s.id/InternSS1",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -209,7 +222,7 @@
                 location: "dalam_negeri",
                 deadline: "06 Feb",
                 link: "https://s.id/InternSS1",
-                badgeBg: "bg-purple-100 text-purple-900",
+                badgeBg: "bg-purple-50 text-purple-700 border border-purple-100",
                 badgeText: "Magang"
             },
             {
@@ -220,7 +233,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.skills.google/paths/118",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -231,7 +244,7 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.theforage.com/",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             },
             {
@@ -242,12 +255,11 @@
                 location: "luar_negeri",
                 deadline: "Not Mention",
                 link: "https://www.life-global.org/allcourses",
-                badgeBg: "bg-yellow-100 text-yellow-900",
+                badgeBg: "bg-amber-50 text-amber-700 border border-amber-100",
                 badgeText: "Pelatihan"
             }
         ];
 
-        // Ekstrak parameter URL (kategori, jenjang, lokasi)
         function getQueryParams() {
             const params = {};
             const search = window.location.search.substring(1);
@@ -260,7 +272,6 @@
             return params;
         }
 
-        // Render data ke dalam grid kontainer
         function renderKatalog(data) {
             const container = document.getElementById('container-katalog');
             const notFoundState = document.getElementById('not-found-state');
@@ -278,18 +289,18 @@
 
             data.forEach(item => {
                 const card = `
-                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-200 border border-gray-100 flex flex-col justify-between h-full">
                         <div class="p-6">
-                            <span class="${item.badgeBg} text-xs font-bold px-3 py-1 rounded-full uppercase">${item.badgeText}</span>
-                            <h3 class="text-xl font-bold mt-4 mb-2">${item.title}</h3>
-                            <p class="text-sm text-gray-500 mb-4 flex items-center">
+                            <span class="${item.badgeBg} text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">${item.badgeText}</span>
+                            <h3 class="text-lg font-semibold text-gray-800 mt-4 mb-2 leading-snug">${item.title}</h3>
+                            <p class="text-xs text-gray-500 flex items-center mb-4 leading-relaxed">
                                 <i class="fas fa-university mr-2"></i> ${item.provider}
                             </p>
                         </div>
                         <div class="px-6 pb-6">
-                            <div class="flex justify-between items-center text-sm border-t pt-4">
-                                <span class="text-red-500 font-medium"><i class="far fa-clock mr-1"></i> Deadline: ${item.deadline}</span>
-                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-bold hover:underline">Detail</a>
+                            <div class="flex justify-between items-center text-xs border-t border-gray-50 pt-4">
+                                <span class="text-red-500 font-medium"><i class="far fa-clock mr-1"></i> ${item.deadline}</span>
+                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-semibold hover:underline">Detail</a>
                             </div>
                         </div>
                     </div>
@@ -298,7 +309,6 @@
             });
         }
 
-        // Logika utama filtering (Strict Matching)
         function aplikasikanFilter() {
             const searchVal = document.getElementById('input-search').value.toLowerCase();
             const kategoriVal = document.getElementById('select-kategori').value;
@@ -306,19 +316,15 @@
             const lokasiVal = document.getElementById('select-lokasi').value;
 
             const filteredData = opportunities.filter(item => {
-                // 1. Filter Nama / Penyelenggara
                 const cocokSearch = item.title.toLowerCase().includes(searchVal) || 
                                     item.provider.toLowerCase().includes(searchVal);
 
-                // 2. Filter Kategori (Mencocokkan secara mutlak)
                 const cocokKategori = (kategoriVal === 'semua') || (item.category === kategoriVal);
 
-                // 3. Filter Jenjang
                 const cocokJenjang = (jenjangVal === 'semua') || 
                                      (item.education === jenjangVal) || 
                                      (item.education === 'semua');
 
-                // 4. Filter Lokasi
                 const cocokLokasi = (lokasiVal === 'semua') || (item.location === lokasiVal);
 
                 return cocokSearch && cocokKategori && cocokJenjang && cocokLokasi;
@@ -327,7 +333,6 @@
             renderKatalog(filteredData);
         }
 
-        // Mereset filter kembali ke pengaturan pabrik
         function resetSemuaFilter() {
             document.getElementById('input-search').value = '';
             document.getElementById('select-kategori').value = 'semua';
@@ -336,11 +341,9 @@
             aplikasikanFilter();
         }
 
-        // Jalankan saat halaman di-load
         window.onload = function() {
             const params = getQueryParams();
 
-            // Set select dropdown berdasarkan parameter URL kiriman Beranda
             if (params.kategori) {
                 document.getElementById('select-kategori').value = params.kategori;
             }
@@ -351,7 +354,6 @@
                 document.getElementById('select-lokasi').value = params.lokasi;
             }
 
-            // Terapkan filter pertama kali
             aplikasikanFilter();
         };
     </script>
