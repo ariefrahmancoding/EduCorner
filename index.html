@@ -174,18 +174,40 @@
     </footer>
 
     <script>
-        // Centralized Database (Satu sumber data untuk index.html dan semua-peluang.html)
+        // Centralized Database (Satu sumber data konsisten dengan semua-peluang.html)
         const opportunities = [
             {
-                title: "Green Leaders",
+                title: "Beasiswa Unggulan Kemendikbud 2026",
+                provider: "Kementerian Pendidikan dan Kebudayaan",
+                category: "beasiswa",
+                education: "s1",
+                location: "dalam_negeri",
+                deadline: "30 Apr 2026",
+                link: "https://beasiswaunggulan.kemdikbud.go.id/",
+                badgeBg: "bg-emerald-100 text-emerald-900",
+                badgeText: "Beasiswa"
+            },
+            {
+                title: "Djarum Beasiswa Plus 2026",
+                provider: "Djarum Foundation",
+                category: "beasiswa",
+                education: "s1",
+                location: "dalam_negeri",
+                deadline: "20 Mei 2026",
+                link: "https://djarumbeasiswaplus.org/",
+                badgeBg: "bg-emerald-100 text-emerald-900",
+                badgeText: "Beasiswa"
+            },
+            {
+                title: "Green Leaders Program",
                 provider: "Green Democracy Institute",
-                category: "volunteer",
+                category: "info_pendidikan",
                 education: "s1",
                 location: "dalam_negeri",
                 deadline: "15 Feb 2026",
                 link: "https://www.greendemocracyinstitute.org/volunteer",
-                badgeBg: "bg-green-100 text-green-900",
-                badgeText: "Volunteer"
+                badgeBg: "bg-blue-100 text-blue-900",
+                badgeText: "Info Pendidikan"
             },
             {
                 title: "Certification of Sustainable Development",
@@ -321,25 +343,26 @@
             }
         ];
 
-        // 1. Fungsi render "Peluang Terbaru" di halaman Beranda (Menampilkan 3 Data Terbaru secara Dinamis)
+        // Tampilkan 3 program paling baru di Beranda secara otomatis
         function renderPeluangTerbaru() {
             const container = document.getElementById('container-terbaru');
             container.innerHTML = '';
 
-            // Ambil 3 data paling atas (atau paling baru diupload oleh admin)
             const listTerbaru = opportunities.slice(0, 3);
 
             listTerbaru.forEach(item => {
                 const card = `
-                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
                         <div class="p-6">
                             <span class="${item.badgeBg} text-xs font-bold px-3 py-1 rounded-full uppercase">${item.badgeText}</span>
                             <h3 class="text-xl font-bold mt-4 mb-2">${item.title}</h3>
                             <p class="text-sm text-gray-500 mb-4 flex items-center">
                                 <i class="fas fa-university mr-2"></i> ${item.provider}
                             </p>
+                        </div>
+                        <div class="px-6 pb-6">
                             <div class="flex justify-between items-center text-sm border-t pt-4">
-                                <span class="text-red-500 font-medium"><i class="far fa-clock mr-1"></i> Deadline: ${item.deadline}</span>
+                                <span class="text-red-500 font-medium"><i class="far fa-clock mr-1"></i> ${item.deadline}</span>
                                 <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-bold hover:underline">Detail</a>
                             </div>
                         </div>
@@ -349,16 +372,13 @@
             });
         }
 
-        // 2. Fungsi Tombol "Cari Sekarang"
+        // Jalankan pencarian dari halaman Beranda ke halaman Katalog
         function cariPeluang() {
             const jenjang = document.getElementById('filter-jenjang').value;
             const lokasi = document.getElementById('filter-lokasi').value;
-
-            // Redirect ke halaman katalog dengan query string parameternya
             window.location.href = `semua-peluang.html?jenjang=${jenjang}&lokasi=${lokasi}`;
         }
 
-        // Jalankan render otomatis saat web dimuat
         window.onload = renderPeluangTerbaru;
     </script>
 </body>
